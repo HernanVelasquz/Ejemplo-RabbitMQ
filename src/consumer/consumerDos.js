@@ -4,7 +4,7 @@ const connectionConsumerDos = async () => {
 
     const queue = 'clientes';
     const enterprise = 'CECAR';
-    const channel = await connection(queue);
+    const channel = await connection();
     await creationQueue(channel, queue);
 
     try {

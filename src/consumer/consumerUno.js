@@ -5,11 +5,10 @@ const consumerUno = async () => {
 
     const queue = 'employees';
     const enterprise = 'SOFKA';
-    const channel  = await connection(queue);
+    const channel  = await connection();
     await creationQueue(channel, queue);
     
     try {
-        
         console.log(`Waiting for message from ${enterprise}`);
         channel.consume(queue, messages => {
             let employees = JSON.parse(messages.content.toString());

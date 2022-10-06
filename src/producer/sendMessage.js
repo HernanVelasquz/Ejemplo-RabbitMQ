@@ -1,4 +1,9 @@
 const msgs = require('../messages/messages');
+/**
+ * Funcion encargado derealizar envios de mensaje a las colas
+ * @param {*} queue para redirrecionar el mensaje a enviar
+ * @param {*} channel de conexion para enviar la cola de conexion
+ */
 
 const sendMessage = async (queue, channel) => {
     for(let msg in msgs){

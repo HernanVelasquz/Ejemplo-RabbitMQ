@@ -1,7 +1,11 @@
 const amqp = require('amqplib');
 const rabbitSetting = require('../config/rabbitSetting');
 
-const connection = async (queue) => {
+/**
+ * Funcion encargada de crear la conexcion a rabbitmq 
+ * @returns canal de conexion creado
+ */
+const connection = async () => {
     try {
         const conectRabbit = await amqp.connect(rabbitSetting);
         console.log('Connection Created...');
